@@ -1,8 +1,5 @@
 import request from '@/utils/request';
 
-
-
-
 export function login(data) {
   return request({
     url: '/u/login',
@@ -26,7 +23,6 @@ export function downloadModel() {
   })
 }
 
-
 export function isUserUUser(uUser) {
   return request({
     url: '/u/is/' + uUser,
@@ -34,16 +30,12 @@ export function isUserUUser(uUser) {
   })
 }
 
-
-
 export function updateStartusing(uId, uStartusing) {
   return request({
-    url: '/u/' + uId + "/" + uStartusing,
+    url: '/u/' + uId + '/' + uStartusing,
     method: 'put'
   })
 }
-
-
 
 export function getInfo(token) {
   return request({
@@ -67,7 +59,6 @@ export function getByKeys(params) {
     params: params
   })
 }
-
 
 export function delById(uId) {
   return request({
