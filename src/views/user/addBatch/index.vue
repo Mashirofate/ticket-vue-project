@@ -3,9 +3,9 @@
     <el-row :gutter="20">
       <el-col :span="12" :offset="6">
         <el-steps :active="avtive" simple>
-          <el-step title="下载模板" icon="el-icon-download"></el-step>
-          <el-step title="导入" icon="el-icon-upload"></el-step>
-          <el-step title="结果" icon="el-icon-success"></el-step>
+          <el-step title="下载模板" icon="el-icon-download" />
+          <el-step title="导入" icon="el-icon-upload" />
+          <el-step title="结果" icon="el-icon-success" />
         </el-steps>
         <div v-if="avtive == 1">
           <el-button @click="downloadModel()">下载</el-button>
@@ -19,7 +19,7 @@
             multiple
             name="file"
           >
-            <i class="el-icon-upload"></i>
+            <i class="el-icon-upload" />
             <div class="el-upload__text">
               将文件拖到此处，或
               <em>点击上传</em>
@@ -34,7 +34,8 @@
 </template>
 
 <script>
-import { downloadModel } from "../../../api/user";
+// eslint-disable-next-line no-unused-vars
+import { downloadModel } from '../../../api/user';
 export default {
   data() {
     return {
@@ -43,7 +44,7 @@ export default {
   },
   methods: {
     downloadModel() {
-      window.location.href = "http://localhost:8080/u/model/download";
+      window.location.href = 'http://localhost:8080/u/model/download';
     }
   }
 };

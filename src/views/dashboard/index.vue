@@ -40,13 +40,13 @@
               :label="item.aName"
               ::name="index"
             >
-              <p>活动标题：{{item.aName}}</p>
+              <p>活动标题：{{ item.aName }}</p>
 
-              <p>活动描述：{{item.aNote}}</p>
-              <p>票数量：{{item.aTicketnumber + '个'}}</p>
-              <p>票务人员：{{item.aEmployeenumber + '个'}}</p>
-              <p>创建时间：{{item.aCreationtime}}</p>
-              <el-button @click="toExhibition(item.aId)" type="primary" plain>查看面板</el-button>
+              <p>活动描述：{{ item.aNote }}</p>
+              <p>票数量：{{ item.aTicketnumber + '个' }}</p>
+              <p>票务人员：{{ item.aEmployeenumber + '个' }}</p>
+              <p>创建时间：{{ item.aCreationtime }}</p>
+              <el-button type="primary" plain @click="toExhibition(item.aId)">查看面板</el-button>
             </el-tab-pane>
           </el-tabs>
         </el-card>
@@ -56,13 +56,13 @@
 </template>
 
 <script>
-import { getOpenActivies } from "@/api/va";
+import { getOpenActivies } from '@/api/va';
 
 export default {
   data() {
     return {
       openActivies: [],
-      activeName: "0"
+      activeName: '0'
     };
   },
   created() {
@@ -71,7 +71,7 @@ export default {
   methods: {
     init() {
       getOpenActivies().then(res => {
-        let { data } = res;
+        const { data } = res;
         this.openActivies = data;
       });
     },
